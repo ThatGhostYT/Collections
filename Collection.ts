@@ -21,8 +21,9 @@ export default class{
 	}
 	
 	addEntry(...entries: Entry[]){
+		const keys = this.keys();
 		for(const entry of entries){
-			if(this.entries.findIndex((item) => item.key === entry.key)) throw new Error("Collection keys must be unique.");
+			if(keys.includes(entry.key)) throw new Error(`Collection keys must be unique. ${entry.key} is already in use.`);
 			this.entries.push(entry);
 		}
 	}
