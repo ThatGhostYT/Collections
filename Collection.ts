@@ -1,9 +1,9 @@
-interface Entry{
+export interface Entry{
 	key: string;
 	value: any;
 }
 
-interface CollectionIterable{
+export interface CollectionIterable{
 	value: any | undefined;
 	done: boolean;
 }
